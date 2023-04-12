@@ -1,37 +1,32 @@
-def half_pyramid
-  puts "Hi, welcome to my super pyramid ! How many levels would you like ?"
-  print ">"
-  levels = gets.chomp.to_i
-
-  puts "Great ! Here's the pyramid : "
-
-  x = 1
-  while x <= levels
-    puts ("#" * x).rjust(levels)
-    x += 1
-  end
-end
-
-def full_pyramid
-    
-
-### CHEAT CODE 
-
-puts "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ? (entre 1 et 25)"
+puts "Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ?"
 print "> "
-user_number=gets.chomp.to_i
-while 0 > user_number or user_number >25 or user_number.to_i==0
-  puts "Merci de choisir un nombre entre 1 et 25"
-  print "> "
-user_number=gets.chomp.to_i
-end 
-puts "Voici la pyramide :"
-user_number.times do |i| #on crée la pyramide
-  (user_number-i-1).times do #vs. prog 15 on remplace les # par des 0 puis on ajoute un #
-    print " "
+floors = gets.chomp.to_i
+i = 1
+
+
+def wtf_pyramid(floors, i)
+  top = floors
+  while floors > i
+    1.upto(floors) do
+        print ' ' * top # -> 
+        print '#' * (2 * i - 1) 
+        print "\n"
+      var -= 1
+      i += 1  
+    end
+  
+    bottom = floors - 1
+    j = 2
+      floors.downto(2) do
+        print ' ' * j
+        print '#' * (2 * bottom - 1)
+        print "\n"
+        bottom -= 1
+        j += 1
+      end
   end
-  (i+1).times do
-    print "#"
-  end
-  puts ""
 end
+
+
+puts "Voici la pyramide :"
+puts wtf_pyramid(floors, i)
